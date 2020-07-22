@@ -1,18 +1,30 @@
 import React, { Component } from 'react'
-import { StyleSheet, View, Text } from 'react-native'
+import { StyleSheet, View } from 'react-native'
+import { ThemeProvider } from 'emotion-theming'
+import themes from './theme'
 import Form from './components/pages/Form'
+import { connect } from 'react-redux'
 
+const mapStateToProps = function (state: any) {
+    return { themeName: state.theme.name }
+}
 
-export default class Main extends Component {
+const connector = connect(mapStateToProps)
+
+class Main extends Component {
 
     render() {
         return (
-            <View style={styles.container}>
-                <Form  />
-            </View>
+            <ThemeProvider theme={themes[this.props.themeName]}>
+                <View style={styles.container}>
+                    <Form />
+                </View>
+            </ThemeProvider>
         )
     }
 }
+
+export default connector(Main);
 
 const styles = StyleSheet.create({
     container: {
