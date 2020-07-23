@@ -1,7 +1,9 @@
-import base from "./base";
-import dark from "./dark";
+import base from "./base"
+import dark from "./dark"
 
-export default {
+const style: any =  {
   base,
   dark
-};
+}
+
+export default style
