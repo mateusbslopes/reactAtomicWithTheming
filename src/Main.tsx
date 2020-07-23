@@ -28,4 +28,4 @@ class Main extends Component {
     }
 }
 
-export default connector(Main);
+export default connector(Main)

@@ -4,6 +4,7 @@ import { setFirstName as setFirstNameAction } from './../../store/ducks/person'
 import { setTheme as setThemeAction } from './../../store/ducks/theme'
 import { CheckBox } from 'react-native-elements'
 import TextInput from '../atoms/TextInput'
+import Text from '../atoms/Text'
 import styled from '@emotion/native'
 
 const mapStateToProps = (state: any) => ({
@@ -29,7 +30,7 @@ export class Form extends Component {
             <Container>
                 <Text>First Name: {this.props.firstName}</Text>
                 <TextInputView>
-                    <TextInput onChangeText={(text: String) => this.props.setFirstName(text)} value={this.props.firstName} style={{color: 'red'}} />
+                    <TextInput onChangeText={(text: String) => this.props.setFirstName(text)} value={this.props.firstName} style={{ color: 'red' }} />
                 </TextInputView>
                 <TextInputView>
                     <TextInput onChangeText={(text: String) => this.props.setFirstName(text)} value={this.props.firstName} />
@@ -41,7 +42,6 @@ export class Form extends Component {
                         onPress={() => this.props.setTheme(this.props.theme === 'dark' ? 'base' : 'dark')}
                     />
                 </CheckBoxView>
-
             </Container>
         )
     }
@@ -52,9 +52,6 @@ const Container = styled.View`
   flex: 1;
   align-items: center;
   justify-content: center;
-`
-const Text = styled.Text`
-  color: ${(props: any) => props.theme.colors.primary[500]};
 `
 
 const CheckBoxView = styled.View`
