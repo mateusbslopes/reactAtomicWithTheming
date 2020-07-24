@@ -6,6 +6,7 @@ import { CheckBox } from 'react-native-elements'
 import TextInput from '../atoms/TextInput'
 import Text from '../atoms/Text'
 import styled from '@emotion/native'
+import GitUser from '../organisms/GitUser'
 
 const mapStateToProps = (state: any) => ({
     firstName: state.person.firstName,
@@ -29,12 +30,8 @@ export class Form extends Component {
         return (
             <Container>
                 <Text>First Name: {this.props.firstName}</Text>
-                <TextInputView>
-                    <TextInput onChangeText={(text: String) => this.props.setFirstName(text)} value={this.props.firstName} style={{ color: 'red' }} />
-                </TextInputView>
-                <TextInputView>
-                    <TextInput onChangeText={(text: String) => this.props.setFirstName(text)} value={this.props.firstName} />
-                </TextInputView>
+                <TextInput onChangeText={(text: String) => this.props.setFirstName(text)} value={this.props.firstName} style={{ color: 'red' }} />
+                <TextInput onChangeText={(text: String) => this.props.setFirstName(text)} value={this.props.firstName} />
                 <CheckBoxView>
                     <Text>Apagar as luzes?</Text>
                     <CheckBox
@@ -42,6 +39,7 @@ export class Form extends Component {
                         onPress={() => this.props.setTheme(this.props.theme === 'dark' ? 'base' : 'dark')}
                     />
                 </CheckBoxView>
+                <GitUser />
             </Container>
         )
     }
@@ -58,10 +56,6 @@ const CheckBoxView = styled.View`
     flex-direction: row;
     align-items: center;
     justify-content: center;
-`
-const TextInputView = styled.View`
-    border-bottom-width: 1px;
-    border-bottom-color: ${(props: any) => props.theme.colors.primary[500]};
 `
 
 export default connector(Form)

@@ -17,7 +17,7 @@ export class Text extends Component {
 
     render() {
         return (
-            <StyledText style={this.props.style}>{this.props.children}</StyledText>
+            <StyledText {...this.props}>{this.props.children}</StyledText>
         )
     }
 }
