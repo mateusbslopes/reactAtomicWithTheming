@@ -1,6 +1,7 @@
 import { put, take, all, call } from 'redux-saga/effects'
 import { setUser as setUserAction, FETCH_USER } from '../store/ducks/git-user'
 import Api from '../api'
+import { GitUserPayload } from '../types'
 
 function* fetchUser(username: String) {
     const user = yield call(Api.fetchUser, username)
@@ -9,7 +10,7 @@ function* fetchUser(username: String) {
 
 function* watchFetchUser() {
     while (true) {
-        const { payload: { username } } = yield take(FETCH_USER)
+        const { payload: { username } }: GitUserPayload = yield take(FETCH_USER)
         yield call(fetchUser, username)
     }
 }
