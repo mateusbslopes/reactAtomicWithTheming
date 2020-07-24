@@ -1,9 +1,9 @@
 import { PersonPayload } from "../../types"
 
 // Actions
-export const SET_FIRST_NAME: String = "SET_FIRST_NAME"
+export const SET_FIRST_NAME: string = "SET_FIRST_NAME"
 
-export const setFirstName = (firstName: String) => ({
+export const setFirstName = (firstName: string) => ({
     type: SET_FIRST_NAME,
     payload: { firstName }
 })

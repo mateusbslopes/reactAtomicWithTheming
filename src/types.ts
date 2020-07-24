@@ -1,18 +1,18 @@
 export type Person = {
-    firstName: String
+    firstName: string
 }
 
 export type Theme = {
-    name: String
+    name: string
 }
 
 export type GitUser = {
-    name?: String,
-    username: String
+    name?: string,
+    username: string
 }
 
 export type Payload = {
-    type: String
+    type: string
     payload: any
 }
 

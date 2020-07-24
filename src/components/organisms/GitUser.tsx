@@ -29,7 +29,7 @@ export class GitUser extends Component {
         }
     }
 
-    setUsername(username: String) {
+    setUsername(username: string) {
         this.setState({ username })
     }
 
@@ -37,7 +37,7 @@ export class GitUser extends Component {
         return (
             <Container>
                 <Text>Search for the username!</Text>
-                <TextInput value={this.state.username} onChangeText={(text: String) => this.setUsername(text)} />
+                <TextInput value={this.state.username} onChangeText={(text: string) => this.setUsername(text)} />
                 <ButtonView>
                     <Button title={"Search"} onPress={() => this.props.fetchUser(this.state.username)} />
                 </ButtonView>
@@ -52,7 +52,7 @@ const mapStateToProps = (state: any) => ({
 })
 
 const mapDispatchToProps = {
-    fetchUser: (username: String) => fetchUserAction(username)
+    fetchUser: (username: string) => fetchUserAction(username)
 }
 
 const connector = connect(mapStateToProps, mapDispatchToProps)

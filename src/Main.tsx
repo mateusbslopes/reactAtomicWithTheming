@@ -11,7 +11,7 @@ const mapStateToProps = function (state: any) {
 const connector = connect(mapStateToProps)
 
 type MainProps = ConnectedProps<typeof connector> & {
-    themeName: String
+    themeName: string
 }
 
 class Main extends Component {
@@ -19,7 +19,7 @@ class Main extends Component {
     props: MainProps | any
 
     render() {
-        let theme: any = themes[this.props.themeName]
+        const theme: any = themes[this.props.themeName]
         return (
             <ThemeProvider theme={theme}>
                 <Form />

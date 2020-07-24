@@ -14,8 +14,8 @@ const mapStateToProps = (state: any) => ({
 })
 
 const mapDispatchToProps = {
-    setFirstName: (firstName: String) => setFirstNameAction(firstName),
-    setTheme: (theme: String) => setThemeAction(theme)
+    setFirstName: (firstName: string) => setFirstNameAction(firstName),
+    setTheme: (theme: string) => setThemeAction(theme)
 }
 
 const connector = connect(mapStateToProps, mapDispatchToProps)
@@ -30,8 +30,8 @@ export class Form extends Component {
         return (
             <Container>
                 <Text>First Name: {this.props.firstName}</Text>
-                <TextInput onChangeText={(text: String) => this.props.setFirstName(text)} value={this.props.firstName} style={{ color: 'red' }} />
-                <TextInput onChangeText={(text: String) => this.props.setFirstName(text)} value={this.props.firstName} />
+                <TextInput onChangeText={(text: string) => this.props.setFirstName(text)} value={this.props.firstName} style={{ color: 'red' }} />
+                <TextInput onChangeText={(text: string) => this.props.setFirstName(text)} value={this.props.firstName} />
                 <CheckBoxView>
                     <Text>Apagar as luzes?</Text>
                     <CheckBox

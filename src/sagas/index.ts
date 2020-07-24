@@ -3,7 +3,7 @@ import { setUser as setUserAction, FETCH_USER } from '../store/ducks/git-user'
 import Api from '../api'
 import { GitUserPayload } from '../types'
 
-function* fetchUser(username: String) {
+function* fetchUser(username: string) {
     const user = yield call(Api.fetchUser, username)
     yield put(setUserAction(user))
 }
