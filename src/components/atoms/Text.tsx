@@ -1,25 +1,20 @@
-import React, { Component } from 'react'
+import React, { ReactNode, Component } from 'react'
 import styled from '@emotion/native'
-import PropTypes from 'prop-types'
 
 const StyledText = styled.Text`
   color: ${(props: any) => props.theme.colors.primary[500]};
 `
 
-export class Text extends Component {
+type TextProps = {
+    children: ReactNode,
+}
 
-    static propTypes = {
-        children: PropTypes.node,
-        style: PropTypes.any
-    }
+export function Text(props: TextProps) {
 
-    props: any
+    return (
+        <StyledText {...props}>{props.children}</StyledText>
+    )
 
-    render() {
-        return (
-            <StyledText {...this.props}>{this.props.children}</StyledText>
-        )
-    }
 }
 
 export default Text
