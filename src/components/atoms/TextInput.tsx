@@ -1,5 +1,4 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 import styled from '@emotion/native'
 
 const StyledTextInput = styled.TextInput`
@@ -13,20 +12,16 @@ const TextInputView = styled.View`
     border-bottom-color: ${(props: any) => props.theme.colors.primary[500]};
 `
 
-export default class TextInput extends Component {
-    static propTypes = {
-        value: PropTypes.any,
-        onChangeText: PropTypes.func,
-        style: PropTypes.any
-    }
-
-    props: any
-
-    render() {
-        return (
-            <TextInputView >
-                <StyledTextInput value={this.props.value} onChangeText={this.props.onChangeText} style={this.props.style} />
-            </TextInputView>
-        )
-    }
+type TextInputProps = {
+    value: string,
+    onChangeText: (text: string) => void,
+    style: any
 }
+
+const TextInput = ({value, onChangeText, style}: TextInputProps) =>  (
+    <TextInputView >
+        <StyledTextInput value={value} onChangeText={onChangeText} style={style} />
+    </TextInputView>
+)
+
+export default TextInput
