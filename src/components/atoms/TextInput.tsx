@@ -18,8 +18,8 @@ type TextInputProps = {
     style?: any
 }
 
-const TextInput = ({value, onChangeText, style}: TextInputProps) =>  (
-    <TextInputView >
+const TextInput = ({ value, onChangeText, style }: TextInputProps) => (
+    <TextInputView>
         <StyledTextInput value={value} onChangeText={onChangeText} style={style} />
     </TextInputView>
 )
