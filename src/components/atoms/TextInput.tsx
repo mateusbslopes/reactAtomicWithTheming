@@ -15,7 +15,7 @@ const TextInputView = styled.View`
 type TextInputProps = {
     value: string,
     onChangeText: (text: string) => void,
-    style: any
+    style?: any
 }
 
 const TextInput = ({value, onChangeText, style}: TextInputProps) =>  (
