@@ -4,9 +4,7 @@ import themes from './theme'
 import Form from './components/pages/Form'
 import { connect, ConnectedProps } from 'react-redux'
 
-const mapStateToProps = function (state: any) {
-    return { themeName: state.theme.name }
-}
+const mapStateToProps = (state: any) => ({ themeName: state.theme.name })
 
 const connector = connect(mapStateToProps)
 

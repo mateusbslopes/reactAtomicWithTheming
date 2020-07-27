@@ -7,14 +7,17 @@ module.exports = {
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "airbnb-typescript",
+        "plugin:@typescript-eslint/eslint-recommended",
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "ecmaFeatures": {
             "jsx": true
         },
-        "ecmaVersion": 11
+        "ecmaVersion": 11,
+        "project": "./tsconfig.json"
     },
     "plugins": [
         "react",
@@ -36,6 +39,18 @@ module.exports = {
         "semi": [
             "error",
             "never"
-        ]
+        ],
+        "arrow-parens": [
+            "warn",
+            "as-needed"
+        ],
+        "@typescript-eslint/semi": [
+            "error",
+            "never"
+        ],
+        "@typescript-eslint/indent": [
+            "error",
+            4
+        ],
     }
 };
