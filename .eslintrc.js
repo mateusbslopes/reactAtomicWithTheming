@@ -36,10 +36,6 @@ module.exports = {
             "error",
             "single"
         ],
-        "semi": [
-            "error",
-            "never"
-        ],
         "arrow-parens": [
             "warn",
             "as-needed"
@@ -53,6 +49,10 @@ module.exports = {
             4
         ],
         "react/jsx-indent": [
+            "error",
+            4
+        ],
+        "react/jsx-indent-props": [
             "error",
             4
         ],
