@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import { connect, ConnectedProps } from 'react-redux'
+import React from 'react'
 import { ThemeProvider } from 'emotion-theming'
 import themes from './theme'
 import Form from './components/pages/Form'
-import { connect, ConnectedProps } from 'react-redux'
 
 const mapStateToProps = (state: any) => ({ themeName: state.theme.name })
 
@@ -12,18 +12,13 @@ type MainProps = ConnectedProps<typeof connector> & {
     themeName: string
 }
 
-class Main extends Component {
-
-    props: MainProps | any
-
-    render() {
-        const theme: any = themes[this.props.themeName]
-        return (
-            <ThemeProvider theme={theme}>
-                <Form />
-            </ThemeProvider>
-        )
-    }
+const Main = ({ themeName }: MainProps) => {
+    const theme: any = themes[themeName]
+    return (
+        <ThemeProvider theme={theme}>
+            <Form />
+        </ThemeProvider>
+    )
 }
 
 export default connector(Main)
