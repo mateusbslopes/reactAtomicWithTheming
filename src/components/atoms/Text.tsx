@@ -9,7 +9,7 @@ type TextProps = {
     children: ReactNode,
 }
 
-const Text = ({ children, ...rest }: TextProps): ReactNode => (
+const Text = ({ children, ...rest }: TextProps) => (
     <StyledText {...rest}>{children}</StyledText>
 )
 
