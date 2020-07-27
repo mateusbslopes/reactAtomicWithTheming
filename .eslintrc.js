@@ -52,5 +52,7 @@ module.exports = {
             "error",
             4
         ],
+        // https://github.com/benmosher/eslint-plugin-import/issues/544
+        "import/no-named-as-default": "off",
     }
 };
