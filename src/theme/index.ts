@@ -1,9 +1,9 @@
 import base from './base'
 import dark from './dark'
 
-const style: any =  {
+const style: any = {
     base,
-    dark
+    dark,
 }
 
 export default style
