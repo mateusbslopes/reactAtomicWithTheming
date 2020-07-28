@@ -1,26 +1,28 @@
-import { GitUserPayload, GitUser } from "../../types"
+import { GitUserPayload, GitUser } from '../../types'
 
 // Actions
-export const SET_USER: string = "SET_USER"
-export const FETCH_USER: string = "FETCH_USER"
+export const SET_USER = 'SET_USER'
+export const FETCH_USER = 'FETCH_USER'
 
 export const setUser = (user: GitUser) => ({
     type: SET_USER,
-    payload: { user }
+    payload: { user },
 })
 
 export const fetchUser = (username: string) => ({
     type: FETCH_USER,
-    payload: { username }
+    payload: { username },
 })
 
 const defaultState = {
-    name: "",
-    username: ""
+    name: '',
+    username: '',
 }
 
 // Reducer
-export default function person(state: GitUser = defaultState, { type, payload }: GitUserPayload) {
+export default function person(
+    state: GitUser = defaultState, { type, payload }: GitUserPayload,
+): GitUser {
     switch (type) {
         case SET_USER:
             return { ...state, ...payload.user }
