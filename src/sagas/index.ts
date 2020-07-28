@@ -1,4 +1,9 @@
-import { put, take, all, call } from 'redux-saga/effects'
+import {
+    put,
+    take,
+    all,
+    call,
+} from 'redux-saga/effects'
 import { setUser as setUserAction, FETCH_USER } from '../store/ducks/git-user'
 import Api from '../api'
 import { GitUserPayload } from '../types'
@@ -15,7 +20,7 @@ function* watchFetchUser() {
     }
 }
 
-export default function* root() {
+export default function* root(): Generator {
     yield all([
         watchFetchUser(),
     ])
