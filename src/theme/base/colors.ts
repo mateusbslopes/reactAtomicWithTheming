@@ -22,5 +22,5 @@ export default {
     card: {
         body: 'rgb(255, 255, 255)',
         header: 'rgb(255, 255, 255)',
-    }
+    },
 }
