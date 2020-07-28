@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * @author patsissons
  * @link https://github.com/emotion-js/emotion/issues/839#issuecomment-500195354
